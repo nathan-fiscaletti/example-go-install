@@ -71,3 +71,19 @@ $ go install github.com/nathan-fiscaletti/example-go-install@latest
 ```
 
 Provided the user installing the program has `$GOPATH/bin` in their `$PATH` environment variable, they can now call `example-go-install` from anywhere.
+
+## Library Consumption
+
+You can allow developers to consum the libraries that are included in your package by giving them the proper paths for `go get`.
+
+For example, if a developer wanted to consume the `mylib` library from this package, they would do that with:
+
+```sh
+$ go get github.com/nathan-fiscaletti/example-go-install/mylib
+```
+
+```go
+import (
+    "github.com/nathan-fiscaletti/example-go-install/mylib"
+)
+```
