@@ -1,7 +1,7 @@
 package main
 
 import (
-	. "./lib"
+	. "github.com/nathan-fiscaletti/example-go-install"
 )
 
 func main() {
