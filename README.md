@@ -10,6 +10,7 @@ This package aims to demonstrate how libraries / commands should be organized in
    ```sh
    export GOPROXY=direct
    ```
+3. If your `main.go` file needs to make use of any of the libraries in your package, you should import them with the fully qualified URL to the github repository including the sub-directory for the library. See [`main.go`](./main.go) for an example of this.
 
 ## Structure
 
@@ -19,16 +20,14 @@ mylib
 main.go
 ```
 
-|||
+|Item|Description|
 |---|---|
 |`mylib/`|One of many possible libraries that your application has packaged with it.|
 |`main.go`|The main entry point for executing the program.|
 
-## `main.go`
+### `main.go`
 
 The `main.go` file should have it's package set to `package main` and it should have a `main()` function. This is what will be called when your program is executed.
-
-If your `main.go` file needs to make use of any of the libraries in your package, you should import them with the fully qualified URL to the github repository including the sub-directory for the library.
 
 `main.go`
 ```go
@@ -41,6 +40,23 @@ import (
 
 func main() {
     mylib.PrintName("nathan")
+}
+```
+
+### `mylib`
+
+All files in the `mylib` directory should have their `package` set appropriately, do not set it to `main`.
+
+`mylib/mylib.go`
+```go
+package mylib
+
+import (
+    "fmt"
+)
+
+func PrintName(name string) {
+    fmt.Printf(name)
 }
 ```
 
