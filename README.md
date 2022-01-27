@@ -4,7 +4,12 @@ This package aims to demonstrate how libraries / commands should be organized in
 
 ## Notes
 
-The name of your repository will be the command that users type into the command line. Since my repository is named `example-go-install`, when you install it, that's the command you'll call on the command line.
+1. The name of your repository will be the command that users type into the command line. Since my repository is named `example-go-install`, when you install it, that's the command you'll call on the command line.
+2. If you're testing this out and installing your application multiple times to debug it, make sure you change your `$GOPROXY` environment variable to be `direct`, that will avoid any caching of your projects versions.
+
+   ```sh
+   export GOPROXY=direct
+   ```
 
 ## Structure
 
@@ -50,11 +55,3 @@ $ go install github.com/nathan-fiscaletti/example-go-install@latest
 ```
 
 Provided the user installing the program has `$GOPATH/bin` in their `$PATH` environment variable, they can now call `example-go-install` from anywhere.
-
----
-
-Note: if you're testing this out and installing your application multiple times to debug it, make sure you change your `$GOPROXY` environment variable to be `direct`, that will avoid any caching of your projects versions.
-
-```sh
-export GOPROXY=direct
-```
