@@ -36,11 +36,11 @@ package main
 
 import (
     // Import the library we need
-	"github.com/nathan-fiscaletti/example-go-install/mylib"
+    "github.com/nathan-fiscaletti/example-go-install/mylib"
 )
 
 func main() {
-	mylib.PrintName("nathan")
+    mylib.PrintName("nathan")
 }
 ```
 
